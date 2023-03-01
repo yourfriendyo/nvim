@@ -2,11 +2,21 @@
 local ensure_packer = function()
     local fn = vim.fn
     local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+
     if fn.empty(fn.glob(install_path)) > 0 then
-        fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+        fn.system({
+            'git', 
+            'clone', 
+            '--depth',
+            '1',
+            'https://github.com/wbthomason/packer.nvim',
+            install_path
+        })
+
         vim.cmd [[packadd packer.nvim]]
         return true
     end
+
     return false
 end
 
@@ -25,19 +35,31 @@ return require('packer').startup(function(use)
 
     -- colors themes
     use 'catppuccin/nvim'
-    use 'kyazdani42/nvim-web-devicons' -- 图标
-    use 'nvim-lualine/lualine.nvim'    -- 底部状态栏
-    use 'nvim-tree/nvim-tree.lua'   -- 文件树
-    use "akinsho/bufferline.nvim" -- buffer分割线
-    use "lewis6991/gitsigns.nvim" -- git提示
-    -- use "p00f/nvim-ts-rainbow"  -- 彩虹括号
+    use 'kyazdani42/nvim-web-devicons'         -- 图标
+    use 'nvim-lualine/lualine.nvim'            -- 底部状态栏
+    use 'nvim-tree/nvim-tree.lua'              -- 文件树
+    use "akinsho/bufferline.nvim"              -- buffer分割线
+    use "lewis6991/gitsigns.nvim"              -- git提示
+    -- use "p00f/nvim-ts-rainbow"                  -- 彩虹括号
 
     -- move 
-    use "christoomey/vim-tmux-navigator"  -- ctrl+hjkl定位窗口
-    use "szw/vim-maximizer"               -- 最大化和恢复当前窗口
-    use { 'phaazon/hop.nvim', branch = 'v2' } -- optional but strongly recommended
+    use "christoomey/vim-tmux-navigator"       -- ctrl+hjkl定位窗口
+    use "szw/vim-maximizer"                    -- 最大化和恢复当前窗口
+    use { 'phaazon/hop.nvim', branch = 'v2' }  -- optional but strongly recommended
     use "ggandor/leap.nvim"
 
+    -- cmpletion
+    use "hrsh7th/nvim-cmp"
+    use "hrsh7th/cmp-buffer"
+    use "hrsh7th/cmp-path"
+    use "hrsh7th/cmp-cmdline"
+    use "saadparwaiz1/cmp_luasnip"
+    use "hrsh7th/cmp-nvim-lsp"
+    use "windwp/nvim-autopairs" -- 自动补全括号
+
+    -- snippets
+    use "L3MON4D3/LuaSnip"
+    use "rafamadriz/friendly-snippets"
 
     -- lsp 
     use "nvim-treesitter/nvim-treesitter"  -- 语法高亮
@@ -56,18 +78,6 @@ return require('packer').startup(function(use)
     -- use "theHamsta/nvim-dap-virtual-text"
     -- use "rcarriga/nvim-dap-ui"
     -- use "nvim-telescope/telescope-dap.nvim"
-
-
-    -- autocmpletion
-    use "hrsh7th/nvim-cmp"
-    use "hrsh7th/cmp-nvim-lsp"
-    use "hrsh7th/cmp-path"
-    use "windwp/nvim-autopairs" -- 自动补全括号
-
-    -- snippets
-    use "L3MON4D3/LuaSnip"
-    use "saadparwaiz1/cmp_luasnip"
-    use "rafamadriz/friendly-snippets"
 
 
     -- tools

@@ -30,14 +30,14 @@ cmp.setup({
         end,
     },
     mapping = cmp.mapping.preset.insert({
-
-        ['<C-k']     = cmp.mapping.select_prev_item(); -- 上下移动浏览提示信息
-        ['<C-k']     = cmp.mapping.select_next_item();
-        ['<C-b>']    = cmp.mapping.scroll_docs(-4),    -- 上下移动4格
-        ['<C-f>']    = cmp.mapping.scroll_docs(4),
+        ['<C-k>']    = cmp.mapping.select_prev_item(), -- 向上移动提示信息
+        ['<C-j>']    = cmp.mapping.select_next_item(), -- 向下移动提示信息
+        ['<C-b>']    = cmp.mapping.scroll_docs(-4),    -- 向上移动4格
+        ['<C-f>']    = cmp.mapping.scroll_docs(4),     -- 向下移动4格
         ['C-Space>'] = cmp.mapping.complete(),
-        ['<C-e>']    = cmp.mapping.abort(),            -- 取消补全，esc也可以退出
-        ['<CR>']     = cmp.mapping.confirm({ select = true }),
+        ['<C-y>']    = cmp.config.disable,
+        ['<C-e>']    = cmp.mapping.abort(),                    -- 取消补全
+        ['<CR>']     = cmp.mapping.confirm({ select = true }), -- 选择此提示
         ["<Tab>"]    = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
@@ -67,21 +67,27 @@ cmp.setup({
             "i",
             "s",
         }),
-}),
-
-    -- 如果要安装其他自动补全插件，记得在下方引用
-    -- 这里重要
-    sources = cmp.config.sources({
-            { name = 'nvim_lsp' },
-            { name = 'luasnip'  },
-            { name = 'path'     },
-            { name = 'buffer'   },
     }),
 
-    fomatting = {
+    -- 如果要安装其他自动补全插件，记得在下方引用
+    sources = cmp.config.sources({
+        { name = 'nvim_lsp' },
+        { name = 'luasnip'  },
+        { name = 'buffer'   },
+        { name = 'path'     },
+    }),
+    -- 格式化
+    formatting = {
         format = lspkind.cmp_format({
             maxwidth = 50,
-            ellipsis_char = "...",
-        }),
+            ellipsis_char = '...',
+        })
+    },
+    confirm_opts = {
+        border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    },
+    experimental = {
+        ghost_text = true,
+        native_menu = false,
     },
 })
