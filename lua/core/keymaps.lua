@@ -63,10 +63,14 @@ keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
 
 -- telescope
 local builtin = require('telescope.builtin')
-keymap.set('n', '<leader>ff', builtin.find_files, {})
-keymap.set('n', '<leader>fg', builtin.live_grep,  {}) -- require ripgrep
-keymap.set('n', '<leader>fb', builtin.buffers,    {})
-keymap.set('n', '<leader>fh', builtin.help_tags,  {})
+keymap.set('n', '<leader>ff', builtin.find_files)
+keymap.set('n', '<leader>fg', builtin.live_grep) -- require ripgrep
+keymap.set('n', '<leader>fb', builtin.buffers)
+keymap.set('n', '<leader>fh', builtin.help_tags)
 
 -- format
 keymap.set('n', '<leader>fm', "<cmd>lua vim.lsp.buf.format()<cr>")
+
+-- outline
+keymap.set('n', '<leader>fo', ':SymbolsOutline<cr>')
+

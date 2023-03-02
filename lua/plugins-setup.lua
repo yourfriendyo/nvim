@@ -37,22 +37,24 @@ return require('packer').startup(function(use)
     use 'catppuccin/nvim'
     use 'kyazdani42/nvim-web-devicons'         -- 图标
     use "MunifTanjim/nui.nvim"
-    use 's1n7ax/nvim-window-picker'
+    use 'projekt0n/github-nvim-theme'
+    use 'martinsione/darkplus.nvim'
 
+    use "akinsho/bufferline.nvim"              -- 顶部buff栏
     use 'nvim-lualine/lualine.nvim'            -- 底部状态栏
-    use 'nvim-neo-tree/neo-tree.nvim'
+    -- use 'nvim-neo-tree/neo-tree.nvim'
     use 'nvim-tree/nvim-tree.lua'
-    use "akinsho/bufferline.nvim"              -- buffer分割线
     use "lewis6991/gitsigns.nvim"              -- git提示
     use "p00f/nvim-ts-rainbow"                 -- 彩虹括号
 
-    -- move 
+    -- window movetion
+    use 's1n7ax/nvim-window-picker'
     use "christoomey/vim-tmux-navigator"       -- ctrl+hjkl定位窗口
     use "szw/vim-maximizer"                    -- 最大化和恢复当前窗口
-    use { 'phaazon/hop.nvim', branch = 'v2' }  -- optional but strongly recommended
+    use { 'phaazon/hop.nvim', branch = 'v2' }  -- 
     use "ggandor/leap.nvim"
 
-    -- cmpletion
+    -- compeletion
     use "hrsh7th/nvim-cmp"
     use "hrsh7th/cmp-buffer"
     use "hrsh7th/cmp-path"
@@ -62,6 +64,8 @@ return require('packer').startup(function(use)
     use "windwp/nvim-autopairs" -- 自动补全括号
 
     -- snippets
+    use "nvim-lua/plenary.nvim"
+    use 'nvim-lua/popup.nvim'
     use "L3MON4D3/LuaSnip"
     use "rafamadriz/friendly-snippets"
 
@@ -84,12 +88,19 @@ return require('packer').startup(function(use)
     -- use "nvim-telescope/telescope-dap.nvim"
 
     -- tools
-    use "numToStr/Comment.nvim" -- gcc和gc注释
-    use "nvim-lua/plenary.nvim"
-    use 'nvim-lua/popup.nvim'
+    use "numToStr/Comment.nvim"                     -- gcc和gc注释
     use "nvim-telescope/telescope.nvim"
     use 'nvim-telescope/telescope-media-files.nvim'
-    use 'akinsho/toggleterm.nvim'  -- float terminal
+    use 'akinsho/toggleterm.nvim'                   -- 浮动终端 
+    use 'lewis6991/impatient.nvim'                  -- 提高插件加载效率
+    use 'rcarriga/nvim-notify'
+    use 'ethanholz/nvim-lastplace'                  -- 打开后自动到上次修改位置
+
+    use "simrat39/symbols-outline.nvim"             -- 代码大纲
+    use 'lukas-reineke/indent-blankline.nvim'       -- 缩进提示线
+    use 'goolord/alpha-nvim'                        -- 面板
+    use "RRethy/vim-illuminate"                     -- 光标提示线
+    use 'chipsenkbeil/distant.nvim'                 -- 远程开发
 
 
     if packer_bootstrap then

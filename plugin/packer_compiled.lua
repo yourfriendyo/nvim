@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/Users/yyo/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["alpha-nvim"] = {
+    loaded = true,
+    path = "/Users/yyo/.local/share/nvim/site/pack/packer/start/alpha-nvim",
+    url = "https://github.com/goolord/alpha-nvim"
+  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/Users/yyo/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
@@ -114,10 +119,25 @@ _G.packer_plugins = {
     path = "/Users/yyo/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["darkplus.nvim"] = {
+    loaded = true,
+    path = "/Users/yyo/.local/share/nvim/site/pack/packer/start/darkplus.nvim",
+    url = "https://github.com/martinsione/darkplus.nvim"
+  },
+  ["distant.nvim"] = {
+    loaded = true,
+    path = "/Users/yyo/.local/share/nvim/site/pack/packer/start/distant.nvim",
+    url = "https://github.com/chipsenkbeil/distant.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/yyo/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
+  },
+  ["github-nvim-theme"] = {
+    loaded = true,
+    path = "/Users/yyo/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
+    url = "https://github.com/projekt0n/github-nvim-theme"
   },
   ["gitsigns.nvim"] = {
     loaded = true,
@@ -128,6 +148,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/yyo/.local/share/nvim/site/pack/packer/start/hop.nvim",
     url = "https://github.com/phaazon/hop.nvim"
+  },
+  ["impatient.nvim"] = {
+    loaded = true,
+    path = "/Users/yyo/.local/share/nvim/site/pack/packer/start/impatient.nvim",
+    url = "https://github.com/lewis6991/impatient.nvim"
+  },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/Users/yyo/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   ["leap.nvim"] = {
     loaded = true,
@@ -164,11 +194,6 @@ _G.packer_plugins = {
     path = "/Users/yyo/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  ["neo-tree.nvim"] = {
-    loaded = true,
-    path = "/Users/yyo/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
-    url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
-  },
   ["nui.nvim"] = {
     loaded = true,
     path = "/Users/yyo/.local/share/nvim/site/pack/packer/start/nui.nvim",
@@ -194,10 +219,20 @@ _G.packer_plugins = {
     path = "/Users/yyo/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-lastplace"] = {
+    loaded = true,
+    path = "/Users/yyo/.local/share/nvim/site/pack/packer/start/nvim-lastplace",
+    url = "https://github.com/ethanholz/nvim-lastplace"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/Users/yyo/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-notify"] = {
+    loaded = true,
+    path = "/Users/yyo/.local/share/nvim/site/pack/packer/start/nvim-notify",
+    url = "https://github.com/rcarriga/nvim-notify"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -239,6 +274,11 @@ _G.packer_plugins = {
     path = "/Users/yyo/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
+  ["symbols-outline.nvim"] = {
+    loaded = true,
+    path = "/Users/yyo/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim",
+    url = "https://github.com/simrat39/symbols-outline.nvim"
+  },
   ["telescope-media-files.nvim"] = {
     loaded = true,
     path = "/Users/yyo/.local/share/nvim/site/pack/packer/start/telescope-media-files.nvim",
@@ -253,6 +293,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/yyo/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
+  },
+  ["vim-illuminate"] = {
+    loaded = true,
+    path = "/Users/yyo/.local/share/nvim/site/pack/packer/start/vim-illuminate",
+    url = "https://github.com/RRethy/vim-illuminate"
   },
   ["vim-maximizer"] = {
     loaded = true,
