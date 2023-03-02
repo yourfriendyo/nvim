@@ -5,8 +5,8 @@ local ensure_packer = function()
 
     if fn.empty(fn.glob(install_path)) > 0 then
         fn.system({
-            'git', 
-            'clone', 
+            'git',
+            'clone',
             '--depth',
             '1',
             'https://github.com/wbthomason/packer.nvim',
@@ -36,11 +36,15 @@ return require('packer').startup(function(use)
     -- colors themes
     use 'catppuccin/nvim'
     use 'kyazdani42/nvim-web-devicons'         -- 图标
+    use "MunifTanjim/nui.nvim"
+    use 's1n7ax/nvim-window-picker'
+
     use 'nvim-lualine/lualine.nvim'            -- 底部状态栏
-    use 'nvim-tree/nvim-tree.lua'              -- 文件树
+    use 'nvim-neo-tree/neo-tree.nvim'
+    use 'nvim-tree/nvim-tree.lua'
     use "akinsho/bufferline.nvim"              -- buffer分割线
     use "lewis6991/gitsigns.nvim"              -- git提示
-    -- use "p00f/nvim-ts-rainbow"                  -- 彩虹括号
+    use "p00f/nvim-ts-rainbow"                 -- 彩虹括号
 
     -- move 
     use "christoomey/vim-tmux-navigator"       -- ctrl+hjkl定位窗口
@@ -79,11 +83,12 @@ return require('packer').startup(function(use)
     -- use "rcarriga/nvim-dap-ui"
     -- use "nvim-telescope/telescope-dap.nvim"
 
-
     -- tools
     use "numToStr/Comment.nvim" -- gcc和gc注释
     use "nvim-lua/plenary.nvim"
+    use 'nvim-lua/popup.nvim'
     use "nvim-telescope/telescope.nvim"
+    use 'nvim-telescope/telescope-media-files.nvim'
     use 'akinsho/toggleterm.nvim'  -- float terminal
 
 

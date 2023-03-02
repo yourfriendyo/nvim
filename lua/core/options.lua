@@ -30,7 +30,7 @@ opt.expandtab = true
 opt.autoindent = true
 opt.smartindent = true
 
-opt.wrap = true                              -- 换行显示
+opt.wrap = false      -- 换行显示
 opt.linebreak = true                         -- 换行时不拆分单词
 opt.mouse:append("a")                        -- 启用鼠标
 opt.clipboard:append("unnamedplus")          -- 启用系统剪切板

@@ -14,7 +14,6 @@ null_ls.setup({
         formatting.clang_format,
         diagnostics.cpp_lint,
     },
-
     on_attach = function(current_client, bufnr)
         if current_client.supports_method("textDocument/formatting") then
             vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
@@ -33,7 +32,6 @@ null_ls.setup({
             })
         end
     end,
-
     ensure_installed = {
         "clang_format",
         "cpp_lint",

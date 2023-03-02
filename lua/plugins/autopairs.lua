@@ -19,6 +19,7 @@ npairs.setup {
     highlight = 'Search',
     highlight_grey='Comment'
   },
+  -- disable_filetype = { "" },
 }
 
 -- 配置这个使得自动补全会把括号带上
