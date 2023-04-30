@@ -1,49 +1,57 @@
-local opt = vim.opt
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
--- opt.guifont = "monospace:h17"               -- the font used in graphical neovim 
--- opt.numberwidth = 4                         -- set number column width to 2 {default 4}
--- opt.cmdheight = 2                           -- 底部提示栏高度
+local options = {
+	fileencoding = "utf-8",         -- the encoding written to a file
+	backup = false,                 -- disable create backup files 
+	writebackup = false,            -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
+	swapfile = false,               -- creates a swapfile
 
-opt.updatetime = 300                         -- 插件状态更新时间
-opt.whichwrap = "bs<>[]hl"                   -- 
-opt.showmode = false                         -- 不显示nvim的模式提示
+	updatetime = 300,               -- samller updatetime faster completion (4000ms default)
+	timeoutlen = 150,               -- time to wait for a mapped sequence to complete (in milliseconds)
 
-opt.scrolloff = 8                            -- 
-opt.sidescrolloff = 8                        -- 
+	completeopt = { "menuone", "noselect", "noinsert", "menu" }, -- for auto complete option, mostly just for cmp
 
-opt.backup = false                           -- 关闭备份文件
-opt.writebackup = false                      -- 不允许使用写入的备份文件
-opt.undofile = false                         -- 重新打开文件后是否允许撤回上次的修改
-opt.swapfile = false                         -- 不使用交换文件
-opt.fileencoding = "utf-8"                   -- 写入文件使用编码utf8
+	clipboard = "unnamedplus",      -- allows to access system clipboard
 
-opt.showtabline = 2                          -- 始终展示标签页标题
-opt.pumheight = 10                           -- pop up menu height
-opt.completeopt = { "menuone", "noselect" }  -- mostly just for cmp
+	cmdheight = 1,                  -- keep status bar position close to bottom
+	conceallevel = 0,               -- so that `` is visible in markdown files
+	hlsearch = true,                -- highlight all matches on previous search pattern
+	ignorecase = true,              -- ignore case in search patterns
+	mouse = "a",                    -- disable mouse completely
+	pumheight = 10,                 -- pop up menu height
+	showmode = false,               -- we don't need to see things like -- INSERT -- anymore
+	showtabline = 2,                -- [0: never show, 1: if has more than 2tabs , 2 : always]
+	smartcase = true,               -- smart case
+	smartindent = true,             -- make indenting smarter again
+	splitbelow = true,              -- force all horizontal splits to go below current window
+	splitright = true,              -- force all vertical splits to go to the right of current window
+	termguicolors = true,           -- set term gui colors (most terminals support this)
+	undofile = true,                -- enable persistent undo
+	expandtab = true,               -- convert tabs to spaces
+	shiftwidth = 4,                 -- the number of spaces inserted for each indentation
+	tabstop = 4,                    -- insert 4 spaces for a tab
+	cursorline = true,              -- highlight the current line
+	cursorcolumn = false,           -- no highlight the cursor column.
+	number = true,                  -- set numbered lines
+	relativenumber = true,          -- set relative numbered lines
+	numberwidth = 4,                -- set number column width to 2 {default 4}
+	signcolumn = "yes",             -- always show the sign column, otherwise it would shift the text each time
+	colorcolumn = "160",            -- always show the sign column, otherwise it would shift the text each time
+	wrap = true,                    -- display lines as one long line
+	scrolloff = 8,                  -- keep 8 height offset from above and bottom
+	sidescrolloff = 8,              -- keep 8 width offset from left and right
+	foldmethod = "expr",            -- fold with nvim_treesitter
+	foldexpr = "nvim_treesitter#foldexpr()",
+	foldenable = false,             -- no fold to be applied when open a file
+	foldlevel = 99,                 -- if not set this, fold will be everywhere
+	spell = false,                  -- add spell support
+	spelllang = { "en_us" },        -- support which languages?
+	diffopt = "vertical,filler,internal,context:4", -- vertical diff split view
+	-- cscopequickfix="s-,c-,d-,i-,t-,e-",       -- cscope output to quickfix window
+	confirm = false,
+}
 
-opt.relativenumber = true                    -- 设置相对行号
-opt.number = true
-
-opt.tabstop = 4                              -- 设置4个空格为缩进
-opt.shiftwidth = 4
-opt.expandtab = true
-opt.autoindent = true
-opt.smartindent = true
-
-opt.wrap = false      -- 换行显示
-opt.linebreak = true                         -- 换行时不拆分单词
-opt.mouse:append("a")                        -- 启用鼠标
-opt.clipboard:append("unnamedplus")          -- 启用系统剪切板
-
-opt.backspace = "indent,eol,start"           -- 保证退格键正确运行
-opt.iskeyword:append("-")                    -- 将-作为单词的一部分
-
-opt.splitright = true                        -- 默认新窗口在下和右
-opt.splitbelow = true
-
-opt.ignorecase = true                        -- 搜索忽略大小写
-opt.smartcase = true
-
-opt.cursorline = true                        -- 高亮所在行
-opt.termguicolors = true                     -- 使用256色
-opt.signcolumn = "yes"                       -- 总是显示左边的符号提示列
+for key, val in pairs(options) do
+	vim.opt[key] = val
+end
